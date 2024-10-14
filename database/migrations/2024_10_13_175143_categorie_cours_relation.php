@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Chapitre;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('exercices', function (Blueprint $table) {
-            $table->foreignUuid("chapitre_id")
+        Schema::table("cours", function(Blueprint $table){
+            $table->foreignUuid("categorie_id")
             ->references("id")
-            ->on("chapitres")
+            ->on("categorie_cours")
             ->cascadeOnDelete();
         });
     }

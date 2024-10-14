@@ -45,4 +45,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function Cours(){
+        $this->belongsToMany(Cours::class);
+    }
+
+    public function Chapitre(){
+        $this->belongsToMany(Chapitre::class);
+    }
+
+    public function Leçons(){
+        $this->belongsToMany(Leçon::class);
+    }
+
+    public function CategorieCours(){
+        $this->belongsToMany(CategorieCours::class);
+    }
 }

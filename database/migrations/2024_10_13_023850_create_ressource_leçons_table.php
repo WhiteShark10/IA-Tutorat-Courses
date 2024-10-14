@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ressource_leçons', function (Blueprint $table) {
             $table->uuid("id")->primary();
-            $table->string("nom");
+            $table->string("titre");
             $table->string("url");
             $table->timestamps();
         });
